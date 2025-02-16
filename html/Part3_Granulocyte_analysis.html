@@ -506,10 +506,9 @@ Idents(neu.seurat) &lt;- &quot;samplename&quot;</code></pre>
 </div>
 <div id="differential-gene-expression-analysis" class="section level2">
 <h2>Differential Gene Expression analysis</h2>
-<p>Differential gene expression analysis was performed using
-[FindMarkers()] (<a href="https://satijalab.org/seurat/articles/de_vignette" class="uri">https://satijalab.org/seurat/articles/de_vignette</a>)
-function from Seurat, with heatmap generated using [ComplexHeatmap
-package] (<a href="https://jokergoo.github.io/ComplexHeatmap-reference/book/a-single-heatmap.html" class="uri">https://jokergoo.github.io/ComplexHeatmap-reference/book/a-single-heatmap.html</a>).</p>
+<p>Differential gene expression analysis was performed using <a href="https://satijalab.org/seurat/articles/de_vignette">FindMarkers()</a>
+function from Seurat, with heatmap generated using <a href="https://jokergoo.github.io/ComplexHeatmap-reference/book/a-single-heatmap.html">ComplexHeatmap
+package</a>.</p>
 <pre class="r"><code>#perform dge
 diff1 &lt;- FindMarkers(neu.seurat, ident.1 = &quot;4T1-Tu-plus-p38i&quot;, ident.2 = &quot;4T1-Tu&quot;, assay = &quot;originalexp&quot;, slot = &quot;data&quot;, test.use = &quot;MAST&quot;, min.pct = 0.01, logfc.threshold = 0)
 dge1 &lt;- diff1[diff1$p_val&lt;0.05, ]
@@ -569,8 +568,8 @@ include_graphics(&quot;Plots/QC2/Granulocytes/Cebpb.png&quot;, dpi = 300)</code>
 </div>
 <div id="gene-set-enrichment-analysis-gsea" class="section level2">
 <h2>Gene set enrichment analysis (GSEA)</h2>
-<p>Gene set enrichment analysis was performed using [fGSEA] (<a href="https://bioconductor.org/packages/release/bioc/vignettes/fgsea/inst/doc/fgsea-tutorial.html" class="uri">https://bioconductor.org/packages/release/bioc/vignettes/fgsea/inst/doc/fgsea-tutorial.html</a>)
-and mosue gene ontology (GO): biological processes dataset as
+<p>Gene set enrichment analysis was performed using <a href="https://bioconductor.org/packages/release/bioc/vignettes/fgsea/inst/doc/fgsea-tutorial.html">fGSEA</a>
+and mouse gene ontology (GO): biological processes dataset as
 reference.</p>
 <pre class="r"><code>#Loading Mouse Gene Ontology database: Biological processes dataset from MSIGDB-Broad Institute
 m_gene_sets &lt;-msigdbr(species = &quot;mouse&quot;, category = &quot;C5&quot;, subcategory = &quot;GO:BP&quot;)
